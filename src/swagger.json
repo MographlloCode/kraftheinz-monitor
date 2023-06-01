@@ -1,0 +1,1749 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Monitor Heinz",
+        "description": "In this documentation you will be able to consult the API Endpoints and also testall available routes.",
+        "contact": "mographllo@gmail.com",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Local Server"
+        }
+    ],
+    "paths": {
+        "/user/": {
+            "get": {
+                "summary": "Search all users",
+                "description": "Route responsible for fetching all users",
+                "tags": ["Users"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/User"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/user": {
+            "post": {
+                "summary": "Create a new user",
+                "description": "Route responsible for creating a new user",
+                "tags": ["Users"],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "name": "Cacau Lima",
+                            "createdAt": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                    "application/json": {
+                        "schemma": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/User"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/user/top": {
+            "get": {
+                "summary": "Get the last User created",
+                "description": "Route responsible for fetching the last user created",
+                "tags": ["Users"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/User"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/user/{id}/": {
+            "get": {
+                "summary": "Search user by id",
+                "description": "Route responsible for searching for user by id",
+                "tags": ["Users"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "User ID",
+                    "required": true
+                }
+                ],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/User"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/user/{id}": {
+            "patch": {
+                "summary": "Update user by id",
+                "description": "Route responsible for editing the user by id",
+                "tags": ["Users"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "User ID",
+                    "required": true
+                }
+                ],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "name": "Thiago Lima"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/User"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+
+        "/factory/": {
+            "get": {
+                "summary": "Search all Factories",
+                "description": "Route responsible for fetching all factories",
+                "tags": ["Factory"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Factory"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/factory": {
+            "post": {
+                "summary": "Create a new factory",
+                "description": "Route responsible for creating a new factory",
+                "tags": ["Factory"],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/Factory"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "name": "Cacau Lima",
+                            "city": "Santos",
+                            "state": "São Paulo",
+                            "createdAt": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                    "application/json": {
+                        "schemma": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Factory"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/factory/top": {
+            "get": {
+                "summary": "Get the last Factory created",
+                "description": "Route responsible for fetching the last user created",
+                "tags": ["Factory"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Factory"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/factory/{id}/": {
+            "get": {
+                "summary": "Search factory by id",
+                "description": "Route responsible for searching for factory by id",
+                "tags": ["Factory"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "Factory ID",
+                    "required": true
+                }
+                ],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Factory"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/factory/{id}": {
+            "patch": {
+                "summary": "Update factory by id",
+                "description": "Route responsible for editing the factory by id",
+                "tags": ["Factory"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "Factory ID",
+                    "required": true
+                }
+                ],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/Factory"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "name": "Cacau Lima",
+                            "city": "Santos",
+                            "state": "São Paulo"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Announcement"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+
+        "/announcement/": {
+            "get": {
+                "summary": "Search all Announcements",
+                "description": "Route responsible for fetching all Announcements",
+                "tags": ["Announcement"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Announcement"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/announcement": {
+            "post": {
+                "summary": "Create a new Announcement",
+                "description": "Route responsible for creating a new Announcement",
+                "tags": ["Announcement"],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/Announcement"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "announcement": "This is the announcement",
+                            "createdAt": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                    "application/json": {
+                        "schemma": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Announcement"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/announcement/top": {
+            "get": {
+                "summary": "Get the last Announcement created",
+                "description": "Route responsible for fetching the last announcement created",
+                "tags": ["Announcement"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Announcement"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/announcement/{id}/": {
+            "get": {
+                "summary": "Search factory by id",
+                "description": "Route responsible for searching for announcement by id",
+                "tags": ["Announcement"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "Announcement ID",
+                    "required": true
+                }
+                ],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Announcement"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/announcement/{id}": {
+            "patch": {
+                "summary": "Update Announcement by id",
+                "description": "Route responsible for editing the announcement by id",
+                "tags": ["Announcement"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "Announcement ID",
+                    "required": true
+                }
+                ],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/Announcement"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "announcement": "This is the announcement"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Announcement"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+
+        "/alert/": {
+            "get": {
+                "summary": "Search all Alerts",
+                "description": "Route responsible for fetching all Alerts",
+                "tags": ["Alert"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Announcement"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/alert": {
+            "post": {
+                "summary": "Create a new Alert",
+                "description": "Route responsible for creating a new Alert",
+                "tags": ["Alert"],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/Alert"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "name": "This is the alert",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "product": "60b893b1d44b040017d2a23f",
+                            "batch": "Batch goes here",
+                            "goal": 3,
+                            "createdAt": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                    "application/json": {
+                        "schemma": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Alert"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/alert/top": {
+            "get": {
+                "summary": "Get the last Alert created",
+                "description": "Route responsible for fetching the last alert created",
+                "tags": ["Alert"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Alert"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/alert/{id}/": {
+            "get": {
+                "summary": "Search Alert by id",
+                "description": "Route responsible for searching for alert by id",
+                "tags": ["Alert"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "Alert ID",
+                    "required": true
+                }
+                ],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Alert"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/alert/{id}": {
+            "patch": {
+                "summary": "Update Alert by id",
+                "description": "Route responsible for editing the announcement by id",
+                "tags": ["Alert"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "Alert ID",
+                    "required": true
+                }
+                ],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/Alert"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "name": "This is the alert",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "product": "60b893b1d44b040017d2a23f",
+                            "batch": "Batch goes here",
+                            "goal": 3
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Alert"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+
+        "/product/": {
+            "get": {
+                "summary": "Search all Products",
+                "description": "Route responsible for fetching all Products",
+                "tags": ["Product"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Product"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/product": {
+            "post": {
+                "summary": "Create a new Product",
+                "description": "Route responsible for creating a new Product",
+                "tags": ["Product"],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/Product"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "name": "This is the Product",
+                            "createdAt": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                    "application/json": {
+                        "schemma": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Product"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/product/top": {
+            "get": {
+                "summary": "Get the last Product created",
+                "description": "Route responsible for fetching the last Product created",
+                "tags": ["Product"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Product"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/product/{id}/": {
+            "get": {
+                "summary": "Search Product by id",
+                "description": "Route responsible for searching for Product by id",
+                "tags": ["Product"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "Product ID",
+                    "required": true
+                }
+                ],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Product"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/product/{id}": {
+            "patch": {
+                "summary": "Update Product by id",
+                "description": "Route responsible for editing the announcement by id",
+                "tags": ["Product"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "Product ID",
+                    "required": true
+                }
+                ],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/Product"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "name": "This is the Product"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Product"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+
+        "/water/goal/": {
+            "get": {
+                "summary": "Search all Water Goals",
+                "description": "Route responsible for fetching all Water Goals",
+                "tags": ["WaterGoal"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/WaterGoal"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/water/goal": {
+            "post": {
+                "summary": "Create a new WaterGoal",
+                "description": "Route responsible for creating a new WaterGoal",
+                "tags": ["WaterGoal"],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/WaterGoal"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "product": "60b893b1d44b040017d2a23f",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "goal": 3,
+                            "registryDateHour": "2019-09-07T-15:50+00",
+                            "createdAt": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                    "application/json": {
+                        "schemma": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/WaterGoal"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/water/goal/top": {
+            "get": {
+                "summary": "Get the last Water Goal created",
+                "description": "Route responsible for fetching the last Water Goal created",
+                "tags": ["WaterGoal"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/WaterGoal"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/water/goal/{id}/": {
+            "get": {
+                "summary": "Search WaterGoal by id",
+                "description": "Route responsible for searching for Water Goal by id",
+                "tags": ["WaterGoal"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "WaterGoal ID",
+                    "required": true
+                }
+                ],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/WaterGoal"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/water/goal/{id}": {
+            "patch": {
+                "summary": "Update WaterGoal by id",
+                "description": "Route responsible for editing the announcement by id",
+                "tags": ["WaterGoal"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "WaterGoal ID",
+                    "required": true
+                }
+                ],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/WaterGoal"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "product": "60b893b1d44b040017d2a23f",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "goal": 3,
+                            "registryDateHour": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/WaterGoal"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+
+        "/energy/goal/": {
+            "get": {
+                "summary": "Search all Energy Goals",
+                "description": "Route responsible for fetching all Energy Goals",
+                "tags": ["EnergyGoal"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EnergyGoal"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/energy/goal": {
+            "post": {
+                "summary": "Create a new EnergyGoal",
+                "description": "Route responsible for creating a new EnergyGoal",
+                "tags": ["EnergyGoal"],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/EnergyGoal"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "product": "60b893b1d44b040017d2a23f",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "goal": 3,
+                            "registryDateHour": "2019-09-07T-15:50+00",
+                            "createdAt": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                    "application/json": {
+                        "schemma": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/EnergyGoal"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/energy/goal/top": {
+            "get": {
+                "summary": "Get the last Energy Goal created",
+                "description": "Route responsible for fetching the last Energy Goal created",
+                "tags": ["EnergyGoal"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EnergyGoal"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/energy/goal/{id}/": {
+            "get": {
+                "summary": "Search EnergyGoal by id",
+                "description": "Route responsible for searching for Energy Goal by id",
+                "tags": ["EnergyGoal"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "EnergyGoal ID",
+                    "required": true
+                }
+                ],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/EnergyGoal"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/energy/goal/{id}": {
+            "patch": {
+                "summary": "Update EnergyGoal by id",
+                "description": "Route responsible for editing the announcement by id",
+                "tags": ["EnergyGoal"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "EnergyGoal ID",
+                    "required": true
+                }
+                ],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/EnergyGoal"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "product": "60b893b1d44b040017d2a23f",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "goal": 3,
+                            "registryDateHour": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/EnergyGoal"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+
+
+        "/water/usage/": {
+            "get": {
+                "summary": "Search all Water Usages",
+                "description": "Route responsible for fetching all Water Usages",
+                "tags": ["WaterUsage"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/WaterUsage"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/water/usage": {
+            "post": {
+                "summary": "Create a new WaterUsage",
+                "description": "Route responsible for creating a new WaterUsage",
+                "tags": ["WaterUsage"],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/WaterUsage"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "product": "60b893b1d44b040017d2a23f",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "usage": 3,
+                            "registryDateHour": "2019-09-07T-15:50+00",
+                            "createdAt": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                    "application/json": {
+                        "schemma": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/WaterUsage"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/water/usage/top": {
+            "get": {
+                "summary": "Get the last Water Usage created",
+                "description": "Route responsible for fetching the last Water Usage created",
+                "tags": ["WaterUsage"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/WaterUsage"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/water/usage/{id}/": {
+            "get": {
+                "summary": "Search WaterUsage by id",
+                "description": "Route responsible for searching for Water Usage by id",
+                "tags": ["WaterUsage"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "WaterUsage ID",
+                    "required": true
+                }
+                ],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/WaterUsage"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/water/usage/{id}": {
+            "patch": {
+                "summary": "Update WaterUsage by id",
+                "description": "Route responsible for editing the announcement by id",
+                "tags": ["WaterUsage"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "WaterUsage ID",
+                    "required": true
+                }
+                ],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/WaterUsage"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "product": "60b893b1d44b040017d2a23f",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "usage": 3,
+                            "registryDateHour": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/WaterUsage"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+
+        "/energy/usage/": {
+            "get": {
+                "summary": "Search all Energy Usages",
+                "description": "Route responsible for fetching all Energy Usages",
+                "tags": ["EnergyUsage"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EnergyUsage"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/energy/usage": {
+            "post": {
+                "summary": "Create a new EnergyUsage",
+                "description": "Route responsible for creating a new EnergyUsage",
+                "tags": ["EnergyUsage"],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/EnergyUsage"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "product": "60b893b1d44b040017d2a23f",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "usage": 3,
+                            "registryDateHour": "2019-09-07T-15:50+00",
+                            "createdAt": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "201": {
+                    "description": "Created",
+                    "content": {
+                    "application/json": {
+                        "schemma": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/EnergyUsage"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/energy/usage/top": {
+            "get": {
+                "summary": "Get the last Energy Usage created",
+                "description": "Route responsible for fetching the last Energy Usage created",
+                "tags": ["EnergyUsage"],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/EnergyUsage"
+                        }
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/energy/usage/{id}/": {
+            "get": {
+                "summary": "Search EnergyUsage by id",
+                "description": "Route responsible for searching for Energy Usage by id",
+                "tags": ["EnergyUsage"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "EnergyUsage ID",
+                    "required": true
+                }
+                ],
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/EnergyUsage"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        },
+        "/energy/usage/{id}": {
+            "patch": {
+                "summary": "Update EnergyUsage by id",
+                "description": "Route responsible for editing the announcement by id",
+                "tags": ["EnergyUsage"],
+                "parameters": [
+                {
+                    "in": "path",
+                    "name": "id",
+                    "type": "string",
+                    "description": "EnergyUsage ID",
+                    "required": true
+                }
+                ],
+                "requestBody": {
+                "content": {
+                    "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/EnergyUsage"
+                    },
+                    "examples": {
+                        "Users": {
+                        "value": {
+                            "product": "60b893b1d44b040017d2a23f",
+                            "factory": "60b893b1d44b040017d2a23f",
+                            "usage": 3,
+                            "registryDateHour": "2019-09-07T-15:50+00"
+                        }
+                        }
+                    }
+                    }
+                }
+                },
+                "responses": {
+                "400": {
+                    "description": "Not Found"
+                },
+                "200": {
+                    "description": "OK",
+                    "content": {
+                    "application/json": {
+                        "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/EnergyUsage"
+                        }
+                    }
+                    }
+                }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                    "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    }
+                }
+            },
+            "Factory": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    }
+                }
+            },
+            "Alert": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "factory": {
+                        "type": "reference"
+                    },
+                    "product": {
+                        "type": "reference"
+                    },
+                    "batch": {
+                        "type": "string"
+                    },
+                    "goal": {
+                        "type": "number"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    }
+                }
+            },
+            "Product": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    }
+                }
+            },
+            "Announcement": {
+                "type": "object",
+                "properties": {
+                    "announcement": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    }
+                }
+            },
+            "WaterGoal": {
+                "type": "object",
+                "properties": {
+                    "product": {
+                        "type": "reference"
+                    },
+                    "factory": {
+                        "type": "reference"
+                    },
+                    "goal": {
+                        "type": "number"
+                    },
+                    "registryDateHour": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    }
+                }
+            },
+            "WaterUsage": {
+                "type": "object",
+                "properties": {
+                    "product": {
+                        "type": "reference"
+                    },
+                    "factory": {
+                        "type": "reference"
+                    },
+                    "usage": {
+                        "type": "number"
+                    },
+                    "registryDateHour": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    }
+                }
+            },
+            "EnergyGoal": {
+                "type": "object",
+                "properties": {
+                    "product": {
+                        "type": "reference"
+                    },
+                    "factory": {
+                        "type": "reference"
+                    },
+                    "goal": {
+                        "type": "number"
+                    },
+                    "registryDateHour": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    }
+                }
+            },
+            "EnergyUsage": {
+                "type": "object",
+                "properties": {
+                    "product": {
+                        "type": "reference"
+                    },
+                    "factory": {
+                        "type": "reference"
+                    },
+                    "usage": {
+                        "type": "number"
+                    },
+                    "registryDateHour": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    }
+                }
+            }
+        }
+    } 
+}
