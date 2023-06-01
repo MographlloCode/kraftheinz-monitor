@@ -6,9 +6,6 @@ This API provides information about Kraft Heinz products, including their goals 
 
 - Retrieve information about Kraft Heinz products
 - Get product goals and usage details
-- Add new products
-- Update existing product information
-- Delete products
 
 ## Requirements
 
