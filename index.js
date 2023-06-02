@@ -10,8 +10,9 @@ import {
   ProductRoutes,
   UserRoutes,
   WaterRoutes,
-  SwaggerRoutes,
 } from "./src/routes/index.js";
+
+import SwaggerRoutes from "./src/routes/swagger.routes.cjs";
 
 dotenv.config();
 
