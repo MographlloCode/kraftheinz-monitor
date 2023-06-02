@@ -8,6 +8,10 @@
     },
     "servers": [
         {
+            "url": "https://kraftheinz-monitor.onrender.com/",
+            "description": "Render Server"
+        },
+        {
             "url": "http://localhost:3000",
             "description": "Local Server"
         }
