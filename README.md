@@ -32,3 +32,13 @@ Make sure to update the `MONGODB_URI` with your MongoDB connection string.
 4. Start the server:
 
 `npm start`
+
+## Documentation
+
+To access the Swagger API documentation, you can go to:
+https://kraftheinz-monitor.onrender.com/doc/
+
+## Testing
+
+You can use the documentation to check how to use the API and acess the routes through this main adress:
+https://kraftheinz-monitor.onrender.com/<the_route_goes_here>
